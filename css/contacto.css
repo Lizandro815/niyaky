@@ -1,0 +1,137 @@
+body {
+    background-color: #1a1a1a ;
+}
+
+.info-cont {
+    background-color: #fff;
+}
+
+.phone-number {
+    font-size: 20px;
+    color: red;
+}
+
+address {
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.container h4 {
+    font-weight: bold;
+}
+
+.container {
+    font-size: 18px;
+}
+
+.infoadd{
+    background-color: #fff;
+}
+
+
+
+
+
+.formulario {
+    background-color: #FAF0E6;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario h2 {
+    font-size: 2.5rem;
+}
+
+.formulario p {
+    font-size: 1rem;
+    color: #8B4513;
+}
+
+.formulario a {
+    color: #FF4500;
+    text-decoration: none;
+}
+
+.form-control {
+    background-color: #FFF5E1;
+    border: 1px solid #FFDAB9;
+    border-radius: 5px;
+}
+
+.form-control::placeholder {
+    color: #8B4513;
+}
+
+.btn-danger {
+    background-color: #FF4500;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-danger:hover {
+    background-color: #FF6347;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Estilo básico para la sección hero */
+.hero-section {
+    position: relative;
+    height: 300px; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilo para el texto del hero */
+.hero-section h1 {
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/images/nosotros.jpg');
+    background-size: 100%;  /* Ajustado al tamaño original */
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: zoomAnimation 20s infinite;  
+    z-index: -1;
+}
+
+@media (min-width: 1024px) { /* Ajuste solo para vistas de escritorio */
+    .hero-section::before {
+        background-position: center 10%; /* La imagen se ajusta hacia la parte inferior */
+    }
+}
+
+/* Animación de zoom más notoria con pausa en el punto central */
+@keyframes zoomAnimation {
+    0%, 20%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Ajustamos el zoom a un valor más grande */
+    }
+}
+
+

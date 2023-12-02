@@ -1,0 +1,12 @@
+{
+    "require": {
+        "google/cloud-storage": "^1.33",
+        "phpmailer/phpmailer": "^6.8",
+        "mailerlite/mailerlite-api-v2-php-sdk": "^0.3.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}

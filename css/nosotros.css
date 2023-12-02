@@ -1,0 +1,269 @@
+body {
+    background-color: #1a1a1a !important;
+}
+
+.seccion-fondo {
+    background-image: url('../assets/images/nosotros_2.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    height: 50vh;
+    display: flex;           
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;    
+}
+
+.overlay-personalizado {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.texto-seccion {
+    color: #ffffff;
+}
+
+.container-personalizado {
+    padding: 2rem;
+}
+
+.section-video-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/casita.jpg');
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    min-height: 70vh;
+    padding: 50px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    width: 50%; 
+    padding-bottom: 25%; 
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 767.98px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .section-video-bg p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .video-container {
+        width: 370px !important; /* Reduce o aumenta según tu preferencia. */
+        padding-bottom: 80%; /* Esto es para un aspecto ratio de 16:9, si tu video tiene un aspect ratio diferente, cambia este porcentaje. */
+    }
+}
+
+.container-fluid {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.contenido {
+    padding: 20px;
+    background-color: #f5f5f5;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.7s, max-height 0.7s ease-in-out; 
+}
+
+.vistas-noso{
+    padding: 20px ;
+    padding-left: 80px;
+    background-color: #f5f5f5;
+}
+
+/* Estilo general para los ítems del list-group */
+.list-group .list-group-item {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: black; /* O el color que prefieras para el texto no seleccionado */
+}
+
+/* Efecto al pasar el ratón por encima */
+.list-group .list-group-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo para ítems seleccionados */
+.list-group .list-group-item.active {
+    background-color: orange !important;
+    color: white !important;
+    border-color: orange !important;
+    border-radius: 15px !important;
+}
+
+/* Estilos linea de tiempo */
+.timeline {  
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.timeline .btn {
+    border: none !important;
+    border-radius: 55px !important;
+    margin: 0 5px;
+    white-space: nowrap;
+    background-color: rgb(227, 89, 10) !important;
+    border: none !important;
+    color: black !important;  /* Establece el color de texto por defecto para todos los botones */
+    font-size: 20px !important;
+}
+
+.timeline .btn:focus, .timeline .btn:active {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+
+.timeline .btn.active {
+    color: white !important;  /* Establece el color de texto blanco solo para el botón activo */
+}
+
+.event-description {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/buda.jpg');
+    height: 400px;
+    color: #ffffff;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    border-radius: 10px;
+}
+
+.barra-años{
+    background-color: rgb(227, 89, 10) !important;
+    border-radius: 30px !important;  
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 767.98px) {
+
+    .list-group-item{
+
+         font-size: 15px; 
+    }
+    
+    .timeline .year {
+        font-size: 14px;
+        padding: 5px 5px; 
+    }
+    .vistas-noso{
+        padding: 5px 5px;
+    }
+  
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 767.98px) {
+
+    .container {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .event-description {
+        height: 300px;
+        overflow: auto;
+        font-size: 16px;
+        width: 100%;
+        margin: 0;
+        padding-left: 20px;  /* Mantener el espacio a los lados */
+        padding-right: 20px; /* Mantener el espacio a los lados */
+    }
+    
+    .list-group-item{
+        font-size: 15px !important; 
+    }
+}
+
+#mision {
+    margin-top: 15px !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/images/mesa.jpg');
+    color: #ffffff;
+    height: 320px !important;
+    background-position: center 45%; /* Valores por defecto, posiciona el fondo en el centro */
+    border-radius: 10px;
+}
+
+.mision-description{
+    padding-top: 8% !important;
+}
+
+.metas-description{
+    padding-top: 5% !important;
+}
+
+#metas{
+    margin-top: 15px !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/niyaky_2.jpg');
+    color: #ffffff;
+    height: 320px !important;
+    background-position: 30% 50%; /* Valores por defecto, posiciona el fondo en el centro */
+    border-radius: 10px;
+}
+
+.tit{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#valores{
+    margin-top: 15px !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/vista.jpg');
+    color: #ffffff;
+    border-radius: 10px;
+    background-size: cover;
+}
+
+
+@media (max-width: 767.98px) {
+
+    #mision{
+        padding-left: 20px;
+        padding-right: 20px;
+    } 
+    #metas{
+        height: 360px !important;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .metas-description{
+        padding-top: 0px !important;
+    }
+
+}
+

@@ -1,0 +1,278 @@
+body {
+    background-color: #1a1a1a !important;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap');
+/* Estilos generales para el carrusel */
+
+#miCarrusel .carousel-item img {
+    width: 100vw; /* Mantiene el ancho al 100% del ancho de la ventana del navegador */
+    height: 80vh; /* Ajusta la altura al 90% de la altura de la ventana del navegador */
+    object-fit: cover; 
+    object-position: center; 
+}
+
+#miCarrusel .carousel-inner {
+    height: 80vh; /* Ajusta la altura al 90% de la altura de la ventana del navegador */
+}
+
+#miCarrusel .carousel-caption {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente para mejorar la legibilidad del texto */
+}
+
+/* Estilos específicos para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    #miCarrusel .carousel-item img {
+        width: 100%; /* Ancho se ajustará al contenedor */
+        height: 80vh; /* Reduces la altura a la mitad del alto de la ventana del navegador */
+        object-fit: cover; /* Asegura que la imagen cubra completamente el espacio sin perder su relación de aspecto */
+    }
+
+    #miCarrusel .carousel-inner {
+        height: 80vh; /* Debe coincidir con la altura establecida para .carousel-item img */
+    }
+
+    #miCarrusel .carousel-caption {
+        padding: 10px 10px;
+        font-size: 1rem; /* Reducir el tamaño de la fuente */
+        /* Ajustes para centrar el contenido */
+        top: 50%; /* Centrar verticalmente */
+        left: 50%; /* Centrar horizontalmente */
+        transform: translate(-50%, -50%); /* Desplazamiento para un centrado perfecto */
+        text-align: center; /* Alinear texto al centro */
+
+        /* Eliminar los estilos predeterminados de posición de Bootstrap para el caption */
+        bottom: unset;
+        right: unset;
+        width: 90%; /* Asegurar que el contenedor abarque todo el ancho */
+    }
+
+    #miCarrusel .carousel-caption h5 {
+        font-size: 1.5rem; /* Tamaño de la fuente para el título */
+    }
+    #miCarrusel .carousel-control-prev,
+    #miCarrusel .carousel-control-next {
+        display: none; /* Esto oculta los controles */
+    }
+}
+
+
+/* Estilos para la sección Acerca de */
+
+.about-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/nosotros.jpg'); /* Capa rgba y la imagen de fondo */
+    background-size: cover;
+    background-position: center center;
+    padding: 110px 110px;
+    margin-top: 50px; /* Margen para separar la sección del carrusel. Ajusta el valor como prefieras. */
+}
+
+#btn-about{
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: orangered; 
+}
+
+.about-title{
+    font-weight: 600;
+}
+
+/* Estilos para PC */
+@media (min-width: 993px) {
+    .about-section {
+        background-position: center 15%; /* Esto desplazará la imagen hacia abajo en PC. Puedes ajustar el "60%" a otro valor si lo necesitas */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-title{
+        text-align: center;
+    }
+
+    .about-section {
+        padding: 20px 20px;
+    }
+    .menu-section {
+        max-width: 100%;
+        background-color: #FAF3E0;
+        padding: 50px 50px !important;
+    }
+}
+
+
+/* Estilos para la sección de menú */
+.menu-section {
+    max-width: 100%;
+    background-color: #fcf3dc!important;; /* Este es un color crema claro */
+    padding: 100px 100px !important; /* Esto añade un espacio (padding) alrededor del contenido para que no esté pegado a los bordes */
+}
+
+.menu-section .container-fluid {
+    padding: 50px 50px;
+}
+
+.menu-title {
+    color: orangered;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 900 !important;
+}
+
+.menu-description {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.menu-image {
+    width: 100%;
+}
+
+.dish-title {
+
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.dish-description {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.dish-icon { 
+    width: 50px;
+    margin-right: 10px;
+}
+
+.menu-link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    text-decoration: none;
+}
+
+.menu-link h4, .menu-link p {
+    text-decoration: none;
+    color: black;
+}
+
+
+@media (max-width: 768px) {
+    .menu-section {
+        height: 80% !important;
+        padding: 20px 20px !important; /* Esto añade un espacio (padding) alrededor del contenido para que no esté pegado a los bordes */
+    }
+
+    .menu-image {
+        width: 100%;
+        max-height: 80% !important;
+    }
+
+    .dish-title {
+        font-size: 20px;
+    }
+    
+
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+    .bao-bun-section {
+        min-height: 100vh;
+    }
+
+    .bao-bun-section img {
+        max-height: 250px; /* Ajusta este valor según lo que necesites */
+    }
+
+    .bao-bun-section h2 {
+        font-size: 28px; /* Reduce el tamaño de la fuente */
+        margin-bottom: 10px; /* Reduce el margen */
+    }
+
+    .bao-bun-section p {
+        font-size: 16px; /* Reduce el tamaño de la fuente */
+        margin: 0 auto; 
+    }
+}
+
+
+
+.rotating-image {
+    transition: transform 0.5s ease-out;
+}
+
+.bao-bun-section img {
+    max-height: 450px;
+    width: auto;
+    object-fit: cover;
+}
+
+.bao-bun-section {
+    color: #000;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+.bao-bun-section .row {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.bao-bun-section h2 {
+    font-weight: 800 !important;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.bao-bun-section p {
+    font-weight: 600 !important;
+    font-size: 18px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.row.cont-sec {
+    height: 80vh;
+    display: flex;
+}
+
+.col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.content {
+    max-width: 500px;
+}
+
+@media (max-width: 767px) {
+    .col-md-6 {
+        flex-direction: column; /* Esto asegura que el contenido se alinee verticalmente en dispositivos móviles */
+    }
+
+    .bao-bun-section p {
+        width: 100%;
+    }
+
+    .bao-bun-section img {
+        margin-top: 20px;
+
+    }
+
+    .row.cont-sec {
+        height: auto;
+    }
+}
+
