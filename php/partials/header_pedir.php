@@ -266,6 +266,14 @@
         #carrito {
             color: orange !important;
         }
+
+        .btn-orden:hover {
+            /* Cambia el color de fondo y el color del texto en el estado hover */
+            background-color: #d35400;
+            /* Un tono más oscuro de naranja, por ejemplo */
+            color: #fff !important;
+            /* Agrega cualquier otro estilo que quieras aplicar en el hover, como un cambio en el borde, sombra, etc. */
+        }
     </style>
 </head>
 
@@ -277,7 +285,7 @@
             <div class="d-flex justify-content-center" style="padding-top: 10px;">
                 <form class="form-inline" id="searchFormEsc" style="width: 50% !important;" action="pedir.php"
                     method="get">
-                    <input class="form-control mr-sm-2" id="searchInput" name="nombre" type="search"
+                    <input class="form-control mr-sm-2" required id="searchInput" name="nombre" type="search"
                         placeholder="Buscar..." aria-label="Buscar" style="width: 80% !important;"
                         value="<?php echo isset($_GET['nombre']) ? htmlspecialchars($_GET['nombre']) : ''; ?>">
                     <button class="btn my-2 my-sm-0" type="submit"
@@ -372,8 +380,8 @@
             <!-- Búsqueda móvil, centrada en el espacio disponible -->
             <div class="navbar-mobile-search flex-grow-1 mx-2">
                 <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar"
-                        id="searchInput"
+                    <input class="form-control" type="search" placeholder="Buscar..." required aria-label="Buscar"
+                        id="searchInputM"
                         value="<?php echo isset($_GET['busqueda']) ? htmlspecialchars($_GET['busqueda']) : ''; ?>">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" id="searchButton">
@@ -464,7 +472,7 @@
 
     <script>
         document.getElementById('searchButton').addEventListener('click', function () {
-            var searchQuery = document.getElementById('searchInput').value;
+            var searchQuery = document.getElementById('searchInputM').value;
             window.location.href = 'pedir.php?nombre=' + encodeURIComponent(searchQuery);
         });
     </script>

@@ -75,3 +75,17 @@ body {
 .card-body {
     flex-grow: 1; /* Permite que el cuerpo de la tarjeta ocupe el espacio disponible */
 }
+
+
+.carousel-item img {
+    width: 100%; /* Ajustar la imagen al ancho del contenedor */
+    height: 500px; /* Altura fija para el contenedor */
+    object-fit: cover; /* Escalar la imagen para cubrir el contenedor */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+    .carousel-item img {
+        height: 300px; /* Altura más pequeña para dispositivos móviles */
+    }
+}
