@@ -1,0 +1,77 @@
+body {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap');
+/* Estilos generales para el carrusel */
+
+#miCarrusel .carousel-item img {
+    width: 100vw; /* Mantiene el ancho al 100% del ancho de la ventana del navegador */
+    height: 40vh; /* Ajusta la altura al 90% de la altura de la ventana del navegador */
+    object-fit: cover; 
+    object-position: center; 
+}
+
+#miCarrusel .carousel-inner {
+    height: 40vh; /* Ajusta la altura al 90% de la altura de la ventana del navegador */
+}
+
+#miCarrusel .carousel-caption {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente para mejorar la legibilidad del texto */
+}
+
+/* Estilos específicos para pantallas pequeñas */
+
+@media (max-width: 768px) {
+    #miCarrusel .carousel-item img {
+        width: 100%; /* Ancho se ajustará al contenedor */
+        height: 30vh; /* Reduces la altura a la mitad del alto de la ventana del navegador */
+        object-fit: cover; /* Asegura que la imagen cubra completamente el espacio sin perder su relación de aspecto */
+    }
+
+    #miCarrusel .carousel-inner {
+        height: 30vh; /* Debe coincidir con la altura establecida para .carousel-item img */
+    }
+
+    #miCarrusel .carousel-caption {
+        padding: 10px 10px;
+        font-size: 1rem; /* Reducir el tamaño de la fuente */
+        /* Ajustes para centrar el contenido */
+        top: 50%; /* Centrar verticalmente */
+        left: 50%; /* Centrar horizontalmente */
+        transform: translate(-50%, -50%); /* Desplazamiento para un centrado perfecto */
+        text-align: center; /* Alinear texto al centro */
+
+        /* Eliminar los estilos predeterminados de posición de Bootstrap para el caption */
+        bottom: unset;
+        right: unset;
+        width: 90%; /* Asegurar que el contenedor abarque todo el ancho */
+    }
+
+    #miCarrusel .carousel-caption h5 {
+        font-size: 1.5rem; /* Tamaño de la fuente para el título */
+    }
+    #miCarrusel .carousel-control-prev,
+    #miCarrusel .carousel-control-next {
+        display: none; /* Esto oculta los controles */
+    }
+}
+
+
+.card-img-top {
+    width: 100%; /* Hace que la imagen sea responsive */
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Corta la imagen para que encaje sin distorsionarse */
+}
+.card-body {
+    height: auto; /* Altura fija para el contenido del cuerpo de la tarjeta */
+}
+.card {
+    display: flex;
+    flex-direction: column; /* Organiza el contenido de la tarjeta en una columna */
+}
+.card-body {
+    flex-grow: 1; /* Permite que el cuerpo de la tarjeta ocupe el espacio disponible */
+}

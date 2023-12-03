@@ -38,6 +38,22 @@
             filter: invert(1);
         }
 
+        .btn-orden {
+            background-color: orange;
+            color: white;
+            border: none;
+            /* Opcional: elimina el borde del botón */
+            cursor: pointer;
+            /* Cambia el cursor a una mano para indicar que es un botón */
+        }
+
+        .btn-orden:hover {
+            background-color: #ffcc80;
+            /* Cambia a un naranja más claro en hover */
+            color: white;
+            /* Mantiene el color de texto blanco */
+        }
+
         /* Estilos para pantallas medianas y grandes */
         @media (min-width: 768px) {
 
@@ -76,13 +92,12 @@
                     </ul>
                 </div>
 
-                <!-- Información de redes sociales y teléfono -->
                 <div class="d-none d-lg-flex align-items-center">
-                    <a href="tel:+529971330471" class="navbar-phone mr-3" style="font-weight: 400;">Tel: (997)
-                        133-0471</a>
-                    <a href="https://www.facebook.com/NiyakyTzucacab/" class="mr-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/niyaky_una_probadita_oriental/"><i class="fab fa-instagram"></i></a>
+                    <button onclick="window.open('./delivery/pedir.php', '_blank');" class="btn btn-orden" style="background-color: orange; color: white;">
+                        Ordene Aquí
+                    </button>
                 </div>
+
             </nav>
         </div>
     </header>

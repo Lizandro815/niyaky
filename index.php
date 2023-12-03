@@ -99,55 +99,52 @@
                 <div class="d-flex flex-wrap justify-content-between">
 
                     <div class="col-md-6 col-6 dish-item d-flex flex-column align-items-center text-center mb-4">
-                        <a href="URL_FIDEOS" class="menu-link">
-                            <img src="./assets/images/pastas.png" alt="Icono Sopas" class="img-fluid dish-icon mb-2">
+                        <a href="./delivery/pedir.php?categoria=1" class="menu-link" target="_blank">
+                            <img src="./assets/images/pastas.png" alt="Icono Fideos" class="img-fluid dish-icon mb-2">
                             <h4 class="dish-title">FIDEOS</h4>
-
                         </a>
                     </div>
 
                     <div class="col-md-6 col-6 dish-item d-flex flex-column align-items-center text-center mb-4">
-                        <a href="URL_ARROZ" class="menu-link">
-                            <img src="./assets/images/arroz.png" alt="Icono Sopas" class="img-fluid dish-icon mb-2">
+                        <a href="./delivery/pedir.php?categoria=2" class="menu-link" target="_blank">
+                            <img src="./assets/images/arroz.png" alt="Icono Arroz" class="img-fluid dish-icon mb-2">
                             <h4 class="dish-title">ARROZ</h4>
-
                         </a>
                     </div>
 
                     <div class="col-md-6 col-6 dish-item d-flex flex-column align-items-center text-center mb-4">
-                        <a href="URL_PICOSO" class="menu-link">
-                            <img src="./assets/images/picante.png" alt="Icono Sopas" class="img-fluid dish-icon mb-2">
+                        <a href="./delivery/pedir.php?categoria=3" class="menu-link" target="_blank">
+                            <img src="./assets/images/picante.png" alt="Icono Picante" class="img-fluid dish-icon mb-2">
                             <h4 class="dish-title">PICOSO</h4>
-
                         </a>
                     </div>
 
                     <div class="col-md-6 col-6 dish-item d-flex flex-column align-items-center text-center mb-4">
-                        <a href="URL_DULCE_SALADO" class="menu-link">
-                            <img src="./assets/images/dulce-pico2.png" alt="Icono Sopas"
+                        <a href="./delivery/pedir.php?categoria=4" class="menu-link" target="_blank">
+                            <img src="./assets/images/dulce-pico2.png" alt="Icono Dulce/Salado"
                                 class="img-fluid dish-icon mb-2">
                             <h4 class="dish-title">DULCE/SALADO</h4>
-
                         </a>
                     </div>
 
                     <div class="col-md-6 col-6 dish-item d-flex flex-column align-items-center text-center mb-4">
-                        <a href="URL_COMPLEMENTOS" class="menu-link">
-                            <img src="./assets/images/papas.png" alt="Icono Sopas" class="img-fluid dish-icon mb-2">
+                        <a href="./delivery/pedir.php?categoria=5" class="menu-link" target="_blank">
+                            <img src="./assets/images/papas.png" alt="Icono Complementos"
+                                class="img-fluid dish-icon mb-2">
                             <h4 class="dish-title">COMPLEMENTOS</h4>
-
                         </a>
                     </div>
 
                     <div class="col-md-6 col-6 dish-item d-flex flex-column align-items-center text-center mb-4">
-                        <a href="URL_ROLLITOS" class="menu-link">
-                            <img src="./assets/images/primavera.png" alt="Icono Sopas" class="img-fluid dish-icon mb-2">
+                        <a href="./delivery/pedir.php?categoria=6" class="menu-link" target="_blank">
+                            <img src="./assets/images/primavera.png" alt="Icono Rollitos de Primavera"
+                                class="img-fluid dish-icon mb-2">
                             <h4 class="dish-title">ROLLITOS DE PRIMAVERA</h4>
-
                         </a>
                     </div>
+
                 </div>
-            </div>  
+            </div>
 
             <!-- Segunda columna: Imagen -->
             <div class="col-md-3 menu-img-section d-flex align-items-center">
@@ -166,7 +163,7 @@
                 <div class="content text-center">
                     <h2>SUSHI EMPANIZADO</h2>
                     <p>Alga nori envuelta en arroz de sushi empanizado y rellena de vegetales,
-                     queso crema con pollo o camarón. Acompañado de salsa agridulce y salsa de soya.
+                        queso crema con pollo o camarón. Acompañado de salsa agridulce y salsa de soya.
                     </p>
                 </div>
             </div>
@@ -184,9 +181,9 @@
             <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
                 <div class="content text-center">
                     <h2>SUSHI DALMATA</h2>
-                    <p>Alga nori envuelta en arroz de sushi con ajonjolí negro y 
+                    <p>Alga nori envuelta en arroz de sushi con ajonjolí negro y
                         relleno de vegatales, queso crema con pollo o camarón.
-                        Acompañado de salsa agridulce y salsa de soya. 
+                        Acompañado de salsa agridulce y salsa de soya.
                     </p>
                 </div>
             </div>
