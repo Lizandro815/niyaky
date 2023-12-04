@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // 4. Agregar el suscriptor al grupo "users" en MailerLite
         $groupsApi = $mailerLiteApi->groups();
-        $groupId = 102858886253381168;  // Reemplaza con el ID de tu grupo "clientes" en MailerLite
+        $groupId = 106657842787780433;  // Reemplaza con el ID de tu grupo "clientes" en MailerLite
         $groupsApi->addSubscriber($groupId, $newSubscriber);
 
         $pdo->commit();

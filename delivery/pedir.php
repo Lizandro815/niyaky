@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Incluye el archivo de conexión a la base de datos
 require '../php/includes/db_connect.php';
 
@@ -188,7 +189,7 @@ try {
                 </div>
                 <div class="modal-footer" id="fo-modal">
 
-                    <input  id="platilloIdInput">
+                    <input type="hidden" id="platilloIdInput">
                     <div class="input-group mr-2" id="seccionCantidad" style="display: none;">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Cantidad</span>

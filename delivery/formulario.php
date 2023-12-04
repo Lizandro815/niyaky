@@ -32,10 +32,11 @@
 </head>
 
 <body>
+    <?php include '../php/partials/header_nueva_cuenta.php'; ?>
 
     <div class="container mt-5" style="margin-bottom: 40px;">
         <h2>Registro de Usuario</h2>
-        <form action="./php/actions/register_user.php" method="POST" enctype="multipart/form-data">
+        <form  method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" name="correo"
@@ -95,7 +96,7 @@
     <!-- Incluyendo Bootstrap JS y jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./js/validar.js"></script>
+    <script src="../js/validar.js"></script>
 </body>
 
 </html>

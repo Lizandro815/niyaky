@@ -281,8 +281,8 @@
     <header style="background-color: rgba(0, 0, 0, 0.5) !important;" class="py-2 d-none d-lg-block">
         <div class="container">
             <!-- Buscador -->
-            <!-- Buscador -->
             <div class="d-flex justify-content-center" style="padding-top: 10px;">
+
                 <form class="form-inline" id="searchFormEsc" style="width: 50% !important;" action="pedir.php"
                     method="get">
                     <input class="form-control mr-sm-2" required id="searchInput" name="nombre" type="search"
@@ -291,6 +291,20 @@
                     <button class="btn my-2 my-sm-0" type="submit"
                         style="background-color: orange; color: white; border: none;">Buscar</button>
                 </form>
+                <?php if (isset($_SESSION['user_name'])): ?>
+                <!-- Sección de ingreso de usuario, solo se muestra si el usuario NO ha iniciado sesión -->
+                <!-- Botón Iniciar Sesión y carrito -->
+                <div class="d-lg-flex align-items-center">
+                    <div class="es-user-icon mr-2" style="padding-top: 5px;">
+                        <i class="fas fa-smile-wink" style="font-size: 20px;"></i>
+                    </div>
+
+                    <p class="mb-0" style="font-weight: 700; font-size: 20px;">Bienvenido,
+                        <?php echo htmlspecialchars($_SESSION['user_name']); ?>
+                    </p>
+                </div>
+                <?php else: ?>
+                <?php endif; ?>
             </div>
 
 
@@ -349,7 +363,8 @@
                         </li>
                     </ul>
                 </div>
-
+                <?php if (!isset($_SESSION['user_name'])): ?>
+                <!-- Sección de ingreso de usuario, solo se muestra si el usuario NO ha iniciado sesión -->
                 <!-- Botón Iniciar Sesión y carrito -->
                 <div class="d-lg-flex align-items-center">
                     <a href="./iniciar_sesion_cliente.php" class="btn btn-orden mr-2"
@@ -361,6 +376,30 @@
                         <i class="fa fa-shopping-cart"></i>
                     </a>
                 </div>
+                <?php else: ?>
+                <!-- Sección que se muestra cuando el usuario ha iniciado sesión -->
+                <!-- Aquí puedes agregar el contenido que desees mostrar al usuario que ha iniciado sesión -->
+                <div class="d-flex align-items-center">
+                    <div class="iconos_user_login" style="margin-right: 10px;">
+                        <a href="ruta-a-tu-pagina-de-perfil.php" class="btn btn-orden" style="background-color: orange; color: white;">
+                            <i class="fa fa-user"></i> <!-- Ícono de perfil de usuario -->
+                        </a>
+                    </div>
+                    <div class="iconos_user_login" style="margin-right: 10px;">
+                        <a href="ruta-a-tu-pagina-de-mis-compras.php" class="btn btn-orden" style="background-color: orange; color: white;">
+                            <i class="fa fa-shopping-bag"></i> <!-- Ícono de bolsa de compras para 'Mis Compras' -->
+                        </a>
+                    </div>
+                    <div class="iconos_user_login" style="margin-right: 10px;">
+                        <a href="ruta-a-tu-pagina-del-carrito.php" class="btn btn-orden"
+                            style="background-color: orange; color: white;">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </div>
+                <?php endif; ?>
+
+
             </nav>
         </div>
     </header>
@@ -385,7 +424,7 @@
                         value="<?php echo isset($_GET['busqueda']) ? htmlspecialchars($_GET['busqueda']) : ''; ?>">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" id="searchButton">
-                            <i class="fas fa-search"></i>
+                            <i style="color: white;" class="fas fa-search"></i>
                         </button>
                     </div>
                 </div>
@@ -403,7 +442,7 @@
         <!-- Elementos colapsables del navbar, solo visibles una vez que el usuario ha pulsado el botón de hamburguesa -->
         <div class="collapse navbar-collapse" id="navbarMobile">
             <!-- Sección de ingreso de usuario -->
-            <?php if (!isset($_SESSION['user'])): ?>
+            <?php if (!isset($_SESSION['user_name'])): ?>
             <!-- Sección de ingreso de usuario, solo se muestra si el usuario NO ha iniciado sesión -->
             <div class="es-user-login-section py-2 px-3">
                 <div class="d-flex align-items-center">
@@ -415,13 +454,40 @@
                         <small class="text-muted">Podrás ver detalles de envío y personalizar tu experiencia.</small>
                     </div>
                 </div>
-                <a href="./crear_cuenta.php" class="btn btn-primary btn-block mt-2">Ingresar</a>
+                <a href="./iniciar_sesion_cliente.php" class="btn btn-primary btn-block mt-2">Ingresar</a>
+            </div>
+            <?php else: ?>
+            <!-- Sección que se muestra cuando el usuario ha iniciado sesión -->
+            <div class="es-user-logged-in-section py-2 px-3">
+                <!-- Aquí puedes agregar el contenido que desees mostrar al usuario que ha iniciado sesión -->
+                <div class="d-flex align-items-center">
+                    <!-- Ejemplo de contenido -->
+                    <div class="es-user-icon mr-2">
+                        <i class="fas fa-smile-wink"></i> <!-- Ejemplo de otro icono -->
+                    </div>
+                    <div>
+                        <p class="mb-0">Bienvenido,
+                            <?php echo htmlspecialchars($_SESSION['user_name']); ?>
+                        </p>
+                        <small class="text-muted">Explora tu panel de usuario y más.</small>
+                    </div>
+                </div>
+                <a href="./panel_usuario.php" class="btn btn-success btn-block mt-2"
+                    style="background-color: orange; border-color: orange;">Ir al panel de usuario</a>
             </div>
             <?php endif; ?>
+
 
             <div class="navbar-nav mx-auto">
                 <a class="nav-item nav-link" href="../../niyaky/index.php"><i class="fas fa-home"
                         style="color: orangered;"></i> Inicio</a>
+                <?php if (isset($_SESSION['user_name'])): ?>
+                <a class="nav-item nav-link" href="mis_pedidos.php"><i style="color: orangered;"
+                        class="fas fa-shopping-bag"></i> <span>Mis
+                        Pedidos</span></a>
+                <?php else: ?>
+
+                <?php endif; ?>
                 <a class="nav-link" href="pedir.php">
                     <i class="fas fa-list" style="color: orangered;"></i> Ver Todo
                 </a>
@@ -449,14 +515,6 @@
                 <a class="nav-link" href="pedir.php?categoria=6">
                     <img src="../assets/images/primavera.png" alt="Rollitos" style="height:20px;"> Rollitos
                 </a>
-                <?php if (isset($_SESSION['user'])): ?>
-                <a class="nav-item nav-link" href="mi_cuenta.php"><i class="fas fa-user"></i> <span>Mi
-                        Cuenta</span></a>
-                <a class="nav-item nav-link" href="mis_compras.php"><i class="fas fa-shopping-bag"></i> <span>Mis
-                        Pedidos</span></a>
-                <?php else: ?>
-
-                <?php endif; ?>
             </div>
         </div>
     </nav>

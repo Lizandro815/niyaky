@@ -138,7 +138,7 @@
                         $('#loadingSpinner').hide();
 
                         if (response.success) {
-                            window.location.href = 'pagina_principal.php';
+                            window.location.href = 'pedir.php';
                         } else {
                             $('#errorText').text(response.message);
                             $('#errorMessage').show();
@@ -148,7 +148,6 @@
                         // Habilitar botón y ocultar spinner
                         $('#submitButton').prop('disabled', false);
                         $('#loadingSpinner').hide();
-
                         alert("Ocurrió un error al procesar la solicitud.");
                     }
                 });
