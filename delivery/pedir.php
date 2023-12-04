@@ -161,6 +161,7 @@ try {
                         <img src="../assets/images/loading.gif" alt="Cargando..." />
                     </div>
 
+
                     <!-- Contenido del Modal -->
                     <div id="modalContent" style="display: none;">
                         <div id="carouselPlatilloImages" class="carousel slide" data-ride="carousel">
@@ -186,6 +187,8 @@ try {
                     </div>
                 </div>
                 <div class="modal-footer" id="fo-modal">
+
+                    <input  id="platilloIdInput">
                     <div class="input-group mr-2" id="seccionCantidad" style="display: none;">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Cantidad</span>
@@ -228,6 +231,8 @@ try {
         $('#platilloModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Botón que activó el modal
             var platilloId = button.data('platillo-id'); // Extraer info del atributo data-*
+
+            $('#platilloIdInput').val(platilloId);
 
             // Mostrar el GIF de carga y ocultar el contenido
             $("#loadingImage").show();

@@ -1,5 +1,5 @@
 <?php
-
+ 
 $host = 'containers-us-west-138.railway.app';  // reemplaza 'tu_hostname' con el proporcionado por Railway
 $db   = 'railway'; // reemplaza 'tu_nombre_db' con el nombre de tu base de datos
 $user = 'root';   // reemplaza 'tu_usuario' con tu usuario de la base de datos

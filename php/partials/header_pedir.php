@@ -352,7 +352,7 @@
 
                 <!-- Botón Iniciar Sesión y carrito -->
                 <div class="d-lg-flex align-items-center">
-                    <a href="./delivery/pedir.php" class="btn btn-orden mr-2"
+                    <a href="./iniciar_sesion_cliente.php" class="btn btn-orden mr-2"
                         style="background-color: orange; color: white;">
                         <i class="fa fa-sign-in-alt"></i> Iniciar Sesión
                     </a>
