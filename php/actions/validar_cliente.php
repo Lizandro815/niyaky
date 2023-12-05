@@ -1,5 +1,6 @@
 <?php
 require '../includes/db_connect.php';
+require '../../config/config.php';
 
 header('Content-Type: application/json'); // Indicar que la respuesta es JSON
 
@@ -18,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['contraseña'])) {
-            session_start();
             $_SESSION['user_id'] = $user['id_cliente'];
             $_SESSION['user_name'] = $user['nombres'];
             $_SESSION['user_email'] = $email;

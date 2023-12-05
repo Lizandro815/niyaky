@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -313,8 +316,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <!-- Logo de la empresa -->
                 <a class="navbar-brand" href="../../niyaky/index.php">
-                    <img class="logo" src="../../../niyaky/assets/images/logo.png" width="60px" height="60px"
-                        alt="Logo">
+                    <img class="logo" src="../../../niyaky/assets/images/logo.png" width="60px" height="60px" alt="Logo">
                 </a>
 
                 <!-- Elementos de navegación -->
@@ -346,14 +348,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pedir.php?categoria=4">
-                                <img src="../../../niyaky/assets/images/dulce-pico2.png" alt="Dulce/Salado"
-                                    style="height:20px;"> Dulce/Salado
+                                <img src="../../../niyaky/assets/images/dulce-pico2.png" alt="Dulce/Salado" style="height:20px;"> Dulce/Salado
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="pedir.php?categoria=5">
-                                <img src="../../../niyaky/assets/images/papas.png" alt="Complementos"
-                                    style="height:20px;"> Complementos
+                                <img src="../../../niyaky/assets/images/papas.png" alt="Complementos" style="height:20px;"> Complementos
                             </a>
                         </li>
                         <li class="nav-item">
@@ -391,9 +391,9 @@
                         </a>
                     </div>
                     <div class="iconos_user_login" style="margin-right: 10px;">
-                        <a href="ruta-a-tu-pagina-del-carrito.php" class="btn btn-orden"
+                        <a href="../delivery/buy_car.php" class="btn btn-orden"
                             style="background-color: orange; color: white;">
-                            <i class="fa fa-shopping-cart"></i>
+                            <i class="fa fa-shopping-cart"></i><span id="num_cart" class="badge mx-1" style="background-color: orange; color: white;"><?php echo $num_cart; ?></span>
                         </a>
                     </div>
                 </div>
@@ -409,9 +409,7 @@
         <div class="container-fluid">
 
 
-            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -419,9 +417,7 @@
             <!-- Búsqueda móvil, centrada en el espacio disponible -->
             <div class="navbar-mobile-search flex-grow-1 mx-2">
                 <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Buscar..." required aria-label="Buscar"
-                        id="searchInputM"
-                        value="<?php echo isset($_GET['busqueda']) ? htmlspecialchars($_GET['busqueda']) : ''; ?>">
+                    <input class="form-control" type="search" placeholder="Buscar..." required aria-label="Buscar" id="searchInputM" value="<?php echo isset($_GET['busqueda']) ? htmlspecialchars($_GET['busqueda']) : ''; ?>">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" id="searchButton">
                             <i style="color: white;" class="fas fa-search"></i>
@@ -435,7 +431,7 @@
 
             <!-- Carrito de compras, visible solo en móvil -->
             <div class="navbar-cart">
-                <a class="nav-link" id="carrito" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>
+                <a class="nav-link" id="carrito" href="../delivery/buy_car.php"><i class="fas fa-shopping-cart"></i><span id="num_cart" class="badge mx-1" style="background-color: orange; color: white;"><?php echo $num_cart; ?></span></a>
             </div>
         </div>
 
@@ -515,12 +511,20 @@
                 <a class="nav-link" href="pedir.php?categoria=6">
                     <img src="../assets/images/primavera.png" alt="Rollitos" style="height:20px;"> Rollitos
                 </a>
+                <?php if (isset($_SESSION['user'])) : ?>
+                    <a class="nav-item nav-link" href="mi_cuenta.php"><i class="fas fa-user"></i> <span>Mi
+                            Cuenta</span></a>
+                    <a class="nav-item nav-link" href="mis_compras.php"><i class="fas fa-shopping-bag"></i> <span>Mis
+                            Pedidos</span></a>
+                <?php else : ?>
+
+                <?php endif; ?>
             </div>
         </div>
     </nav>
 
     <script>
-        document.getElementById('searchFormEsc').addEventListener('submit', function (event) {
+        document.getElementById('searchFormEsc').addEventListener('submit', function(event) {
             event.preventDefault(); // Previene el envío normal del formulario
             var searchQuery = document.getElementById('searchInput').value;
             window.location.href = 'pedir.php?nombre=' + encodeURIComponent(searchQuery);
@@ -529,7 +533,7 @@
 
 
     <script>
-        document.getElementById('searchButton').addEventListener('click', function () {
+        document.getElementById('searchButton').addEventListener('click', function() {
             var searchQuery = document.getElementById('searchInputM').value;
             window.location.href = 'pedir.php?nombre=' + encodeURIComponent(searchQuery);
         });
@@ -537,14 +541,14 @@
 
 
     <script>
-        $(document).ready(function () {
-            $('.navbar-toggler').click(function (event) {
+        $(document).ready(function() {
+            $('.navbar-toggler').click(function(event) {
                 event.stopPropagation();
                 $('#navbarMobile').toggleClass('show');
                 $('body').toggleClass('navbar-open'); // Añade/quita la clase al body
             });
 
-            $(document).click(function (event) {
+            $(document).click(function(event) {
                 var $navbarMobile = $('#navbarMobile');
                 if (!$(event.target).closest($navbarMobile).length && $navbarMobile.hasClass('show')) {
                     $navbarMobile.removeClass('show');
@@ -552,7 +556,7 @@
                 }
             });
 
-            $('#navbarMobile').click(function (event) {
+            $('#navbarMobile').click(function(event) {
                 event.stopPropagation();
             });
 
@@ -561,8 +565,6 @@
 
 
         });
-
-
     </script>
 
 </body>
