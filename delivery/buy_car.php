@@ -18,12 +18,6 @@ if ($productos != null) {
     $query = $pdo -> prepare("SELECT id_direccion, id_cliente, direccion, latitud, longitud FROM direccion_envios WHERE id_cliente=1");
     $query -> execute();
     $row = $query->fetch(PDO::FETCH_ASSOC); 
-
-    if($row){
-        echo("HOLA");
-    }else{
-        echo("NADA");
-    }
 } else {
 }
 ?>
@@ -130,7 +124,6 @@ if ($productos != null) {
                         <?php } ?>
                     </div>
                     </div>
-
                 </div>
             <?php } ?>
         </div>

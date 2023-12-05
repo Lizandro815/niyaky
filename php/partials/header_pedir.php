@@ -391,9 +391,9 @@
                         </a>
                     </div>
                     <div class="iconos_user_login" style="margin-right: 10px;">
-                        <a href="ruta-a-tu-pagina-del-carrito.php" class="btn btn-orden"
+                        <a href="../delivery/buy_car.php" class="btn btn-orden"
                             style="background-color: orange; color: white;">
-                            <i class="fa fa-shopping-cart"></i>
+                            <i class="fa fa-shopping-cart"></i><span id="num_cart" class="badge mx-1" style="background-color: orange; color: white;"><?php echo $num_cart; ?></span>
                         </a>
                     </div>
                 </div>
