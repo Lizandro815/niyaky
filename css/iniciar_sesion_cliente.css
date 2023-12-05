@@ -1,0 +1,9 @@
+.sin-decoracion {
+    text-decoration: none !important; /* Elimina el subrayado */
+    color: orangered !important; /* Color del enlace, ajusta según tu esquema de color */
+}
+
+.sin-decoracion:hover {
+    text-decoration: underline !important; /* Opcional: añade subrayado al pasar el ratón */
+    /* Otros estilos para hover si es necesario */
+}

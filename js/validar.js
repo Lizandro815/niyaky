@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Envío de formulario mediante AJAX
         let formData = new FormData(form);
-        fetch('./php/actions/register_user.php', {
+        fetch('../php/actions/register_user.php', {
             method: 'POST',
             body: formData
         })
