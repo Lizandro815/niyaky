@@ -198,6 +198,28 @@ try {
     </div>
     <!----fin modal-->
 
+<!-- Modal Login Alert -->
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLoginLabel">Acceso al Carrito</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Para acceder al carrito de compras, primero debes iniciar sesión.
+            </div>
+            <div class="modal-footer">
+                <a href="./iniciar_sesion_cliente.php" class="btn btn-primary">Iniciar Sesión</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
     <?php include '../php/partials/footer.php'; ?>
 

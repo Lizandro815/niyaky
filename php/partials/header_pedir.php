@@ -371,17 +371,16 @@
                         style="background-color: orange; color: white;">
                         <i class="fa fa-sign-in-alt"></i> Iniciar Sesión
                     </a>
-                    <a href="ruta-a-tu-pagina-del-carrito.php" class="btn btn-orden"
-                        style="background-color: orange; color: white;">
+                    <a href="#" class="btn btn-orden mr-2" style="background-color: orange; color: white;" data-toggle="modal" data-target="#modalLogin">
                         <i class="fa fa-shopping-cart"></i>
-                    </a>
+                      </a>
                 </div>
                 <?php else: ?>
                 <!-- Sección que se muestra cuando el usuario ha iniciado sesión -->
                 <!-- Aquí puedes agregar el contenido que desees mostrar al usuario que ha iniciado sesión -->
                 <div class="d-flex align-items-center">
                     <div class="iconos_user_login" style="margin-right: 10px;">
-                        <a href="ruta-a-tu-pagina-de-perfil.php" class="btn btn-orden" style="background-color: orange; color: white;">
+                        <a href="panel_cliente.php" class="btn btn-orden" style="background-color: orange; color: white;">
                             <i class="fa fa-user"></i> <!-- Ícono de perfil de usuario -->
                         </a>
                     </div>
@@ -429,10 +428,32 @@
 
 
 
-            <!-- Carrito de compras, visible solo en móvil -->
-            <div class="navbar-cart">
-                <a class="nav-link" id="carrito" href="../delivery/buy_car.php"><i class="fas fa-shopping-cart"></i><span id="num_cart" class="badge mx-1" style="background-color: orange; color: white;"><?php echo $num_cart; ?></span></a>
-            </div>
+            <?php
+if (isset($_SESSION['user_name'])) {
+    // Si la sesión 'user_name' existe, muestra el enlace al carrito de compras
+    ?>
+    <div class="navbar-cart">
+        <a class="nav-link" id="carrito" href="../delivery/buy_car.php">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="num_cart" class="badge mx-1" style="background-color: orange; color: white;">
+                <?php echo $num_cart; ?>
+            </span>
+        </a>
+    </div>
+    <?php
+} else {
+    // Si la sesión 'user_name' no existe, muestra un enlace que abre el modal de alerta
+    ?>
+    <div class="navbar-cart">
+        <a class="nav-link" id="carrito" href="#" data-toggle="modal" data-target="#modalLogin">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge mx-1" style="background-color: orange; color: white;">0</span>
+        </a>
+    </div>
+    <?php
+}
+?>
+
         </div>
 
         <!-- Elementos colapsables del navbar, solo visibles una vez que el usuario ha pulsado el botón de hamburguesa -->
@@ -468,7 +489,7 @@
                         <small class="text-muted">Explora tu panel de usuario y más.</small>
                     </div>
                 </div>
-                <a href="./panel_usuario.php" class="btn btn-success btn-block mt-2"
+                <a href="./panel_cliente.php" class="btn btn-success btn-block mt-2"
                     style="background-color: orange; border-color: orange;">Ir al panel de usuario</a>
             </div>
             <?php endif; ?>
